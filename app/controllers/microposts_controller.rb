@@ -27,6 +27,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "success"
       redirect_to root_url
     else
+      @feed_items = []
       render 'new'
     end
   end
