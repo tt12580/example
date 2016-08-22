@@ -41,7 +41,7 @@
       margin-top: 15px;
     }
     .stats {
-
+      overflow: auto;
       margin-top: 0;
       padding: 0;
       a {
@@ -112,7 +112,7 @@
     }
     .content {
       display: block;
-      margin-left: 60px;
+      margin-left: 0px;
       img {
         display: block;
         padding: 5px 0;
@@ -132,7 +132,7 @@
     aside {
       textarea {
         height: 100px;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         width: 180px;
       }
     }

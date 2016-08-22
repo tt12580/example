@@ -1,3 +1,4 @@
+<ol class="microposts">
   <li>
     <%= link_to gravatar_for(current_user,size:50),current_user %>
     <span class="user">
@@ -10,3 +11,4 @@
       <%= pluralize(current_user.microposts.count,"microposts") %>
     </span>
   </li>
+</ol>
