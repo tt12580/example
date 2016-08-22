@@ -5,12 +5,10 @@
         <%= render 'shared/error_messages',object: f.object %>
         <%= f.label :Content %>
         <%=  f.text_area :content,class: 'form-control' %>
+        <%= f.file_field :picture %>
         <%= link_to 'Back',root_path(f), class:'btn btn-primary' %>
         <%= f.submit "New",class:'btn btn-primary' %>
-        <span class="picture">
-          <%= f.file_field :picture %>
-        </span>
-      <%end%>
+      <% end %>
     </div>
   </div>
 </div>

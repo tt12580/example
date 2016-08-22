@@ -5,6 +5,7 @@ class MicropostsController < ApplicationController
     @microposts = Micropost.all
     if logged_in?
       @micropost = current_user.microposts.build
+      @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
 
@@ -38,6 +39,12 @@ class MicropostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @micropost.destroy
+    flash[:success] = "delete"
+    redirect_to request.referrer || root_url
   end
 
   private

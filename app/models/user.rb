@@ -9,4 +9,8 @@ class User < ApplicationRecord
                   uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password,presence: true,length:{ minimum:5},allow_nil: true
+
+  def feed
+    Micropost.where("user_id = ?",id)
+  end
 end
