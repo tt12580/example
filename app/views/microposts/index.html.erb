@@ -1,0 +1,16 @@
+  <% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <ol class="microposts">
+          <section class="user_info">
+          <%= render 'shared/user_info' %>
+          </section>
+          <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+          </section>
+        </ol>
+      </aside>
+    </div>
+<% else %>
+<h1> <%= "Hello" %></h1>
+<% end %>
