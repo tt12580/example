@@ -3,16 +3,12 @@
     <div class="form-horizontal">
       <div class="form-group">
         <h1>Update</h1>
-        <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages',object: f.object %>
-          <%= f.label :name %>
-          <%= f.text_field :name,class:'form-control' %>
-          <%= f.label :email %>
-          <%= f.text_field :email,class:'form-control' %>
-          <%= f.label :password %>
-          <%= f.text_field :password,class:'form-control' %>
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :name, class:'form-control' %>
+          <%= f.input :email,class:'form-control' %>
+          <%= f.input :password,class:'form-control' %>
           <%= link_to 'Back',root_path,class:'btn btn-primary' %>
-          <%= f.submit 'Save change',class:'btn btn-primary' %>
+          <%= f.button :submit ,class:'btn btn-primary' %>
         <% end %>
       </div>
     </div>
