@@ -18,6 +18,9 @@ class User < ApplicationRecord
   has_secure_password
   validates :password,presence: true,length:{ minimum:5},allow_nil: true
 
+  scope :search_name, -> (name) { where("name like '%#{name}%'") if name.present? }
+  scope :search_id, -> (id) { where(id: id) if id.present? }
+
   def feed
     Micropost.where("user_id = ?",id)
   end

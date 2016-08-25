@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    root 'users#index'
+    resources :users do
+      resources :microposts
+    end
+
+  end
+
   get 'microposts/new'
   get 'microposts/show'
   get 'sessions/new'

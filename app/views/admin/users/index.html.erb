@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag admin_users_path, method: :get do %>
+      <%= label_tag :name %>
+      <%= text_field_tag :name %>
+      <%= label_tag :id %>
+      <%= text_field_tag :id %>
+      <%= submit_tag 'search' %>
+    <% end %>
+      <%= will_paginate %>
+    <table class="table table-striped">
+      <tr>
+        <td>ID</td>
+        <td>头像</td>
+        <td>用户名</td>
+        <td>创建时间</td>
+        <td>微博</td>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= gravatar_for user, size: 30 %></td>
+        <td><%= link_to user.name,user %></td>
+        <td><%= user.created_at.to_s(:db) %></td>
+        <td><%= link_to 'microposts', admin_user_microposts_path(user) %></td>
+      </tr>
+      <% end %>
+
+    </table>
+    <%= will_paginate %>
+  </div>
+</div>

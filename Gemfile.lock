@@ -257,6 +257,7 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-simple-search (0.9.9)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -334,6 +335,7 @@ DEPENDENCIES
   paranoia (= 2.2.0.pre)
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rails-simple-search (~> 0.9.9)
   sass-rails (~> 5.0)
   simple_form
   spring
