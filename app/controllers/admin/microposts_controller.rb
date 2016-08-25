@@ -1,10 +1,13 @@
 class Admin::MicropostsController < ApplicationController
 
-
+  layout 'admin'
 
   def index
-    @user = User.find(params[:user_id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = Micropost.
+      search_content(params[:content]).
+      search_name(params[:name]).
+      search_id(params[:id]).
+      paginate(page: params[:page])
   end
 
   def show

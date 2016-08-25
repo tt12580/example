@@ -6,6 +6,9 @@ class Micropost < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   validate :picture_size
+  scope :search_content, -> (content) { where("content like '%#{content}%'") if content.present? }
+  scope :search_name, -> (name) { eager_load(:user).where("users.name like '%#{name}%'") if name.present? }
+  scope :search_id, -> (id) { eager_load(:user).where("users.id": id) if id.present? }
 
   private
 
